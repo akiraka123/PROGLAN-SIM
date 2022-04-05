@@ -131,17 +131,37 @@ int main(int argc, char** argv)
 					cout<< "Nama Mahasiswa	: "<<recMhs[i].getNama()<<endl;
 					cout<< "Tanggal Lahir	: "<<recMhs[i].getTglLahir()<< ", "<< recMhs[i].getBulanLahir()<<", "<<recMhs[i].getTahunLahir()<<endl;
 					cout<< "NRP 	: "<<recMhs[i].getNRP()<<endl;
-					cout<< "Departemen	: "<<recMhs[i].getNama()<<endl;
-					cout<< "Nama Mahasiswa	: "<<recMhs[i].getNama()<<endl;
-					cout<< "Nama Mahasiswa	: "<<recMhs[i].getNama()<<endl;
+					cout<< "Departemen	: "<<recMhs[i].getDepartemen()<<endl;
+					cout<< "Tahun Masuk	: "<<recMhs[i].getNama()<<endl;
 					cout << endl;
 				}
 			}
-				
+
 				break;
 			case 5:
+			{
+				for (int i = 0; i < recMhs.size(); i++)
+				{
+					cout<< "Nama Mahasiswa	: "<<recDosen[i].getNama()<<endl;
+					cout<< "Tanggal Lahir	: "<<recDosen[i].getTglLahir()<< ", "<< recDosen[i].getBulanLahir()<<", "<<recDosen[i].getTahunLahir()<<endl;
+					cout<< "NRP 	: "<<recDosen[i].getNPP()<<endl;
+					cout<< "Departemen	: "<<recDosen[i].getDepartemen()<<endl;
+					cout<< "Pendidikan Terakhir	: "<<recDosen[i].getPendidikan()<<endl;
+					cout << endl;
+				}
+			}
 				break;
 			case 6:
+			{
+				for (int i = 0; i < recMhs.size(); i++)
+				{
+					cout<< "Nama Mahasiswa	: "<<recTendik[i].getNama()<<endl;
+					cout<< "Tanggal Lahir	: "<<recTendik[i].getTglLahir()<< ", "<< recTendik[i].getBulanLahir()<<", "<<recTendik[i].getTahunLahir()<<endl;
+					cout<< "NRP 	: "<<recTendik[i].getNPP()<<endl;
+					cout<< "Tahun Masuk	: "<<recTendik[i].getUnit()<<endl;
+					cout << endl;
+				}
+			}
 				break;
 			case 7:
 				return 0;
