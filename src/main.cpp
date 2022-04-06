@@ -15,8 +15,10 @@ int main(int argc, char** argv)
 	vector<tendik> recTendik;
 
 	int menu_terpilih;
+	int pilihan;
 
-	while(1) {
+	while(menu_terpilih != 7) {
+		
 		cout << "Selamat datang di Universitas X" << endl << endl;
 		cout << "Data statistik:" << endl;
 		cout << "  1. Jumlah Mahasiswa             : " << recMhs.size() << " Mahasiswa" << endl;
@@ -38,6 +40,7 @@ int main(int argc, char** argv)
 		{
 			case 1:
 			{
+			
 			string nama,nrp,departemen;
 			int dd,mm,yy,tahunmasuk,id;
 			cout << "Masukkan Nama			: ";
@@ -124,6 +127,7 @@ int main(int argc, char** argv)
 				recTendik.push_back(tendikbaru);
 			}
 				break;
+
 			case 4:	
 			{	
 				for (int i = 0; i < recMhs.size(); i++)
@@ -136,8 +140,8 @@ int main(int argc, char** argv)
 					cout << endl;
 				}
 			}
-
 				break;
+
 			case 5:
 			{
 				for (int i = 0; i < recMhs.size(); i++)
@@ -151,6 +155,7 @@ int main(int argc, char** argv)
 				}
 			}
 				break;
+
 			case 6:
 			{
 				for (int i = 0; i < recMhs.size(); i++)
@@ -162,9 +167,14 @@ int main(int argc, char** argv)
 					cout << endl;
 				}
 			}
+			break;
+
+			default: 
+				cout<< "Input yang dipilihan salah, Silahkan  Masukkan Kembali\n";
+				cout<< "Untuk kembali ke menu utama masukkan angka 1  ";
+				cin>>pilihan;
+				
 				break;
-			case 7:
-				return 0;
 		}
 	}
 
