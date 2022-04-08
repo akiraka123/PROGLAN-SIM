@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "include/person.hpp"
@@ -8,24 +9,32 @@
 
 using namespace std;
 
+
+
+
 int main(int argc, char** argv)
 {
+	system("cls||clear");
 	vector<mahasiswa> recMhs;
 	vector<dosen> recDosen;
 	vector<tendik> recTendik;
 
-	int menu_terpilih;
+	
+	char menu_terpilih;
 	int pilihan;
 	string nama,nrp,npp,departemen,pendidikan,unit;
-	int dd,mm,yy,tahunmasuk;
-	int idm=0, idd=0, idt=0;
+	int dd,mm,yy,tahunmasuk,semesterke, skslulus;
+	float ipk;
+	int idmaba=0, iddosen=0, idtendik=0;
 	int noID=0;
 	cout << "\nMake By AKIRAKA \nSelamat datang di Universitas X" << endl << endl;
-
-	while(1) {	
+	
+	bool kondisi=true;
+	while(kondisi) {	
 		
 		cout<< "ENTER untuk masuk ke menu utama  ";
 		cin.ignore();
+		system("cls||clear");
 		cout << "\n\nSIAKAD\n                                                    "<< endl;
 		cout << "Data statistik:" << endl;
 		cout << "  1. Jumlah Mahasiswa             : " << recMhs.size() << " Mahasiswa" << endl;
@@ -39,18 +48,22 @@ int main(int argc, char** argv)
 		cout << "  4. Tampilkan semua Mahasiswa" << endl;
 		cout << "  5. Tampilkan semua Dosen" << endl;
 		cout << "  6. Tampilkan semua Tenaga Kependidikan" << endl;
-		cout << "  7. Keluar \n" << endl;
+		cout << "  8. Keluar \n" << endl;
 		cout << "-> Silahkan memilih salah satu: ";
 		cin >> menu_terpilih;
-		cout<< endl;
+		cin.ignore();
+		system("cls||clear");
+
 		switch (menu_terpilih) 
 		{
-			case 1:
+			
+			case '1':
 			{
-			++idm;
+				cout<< "\nIsi data-data berikut : "<< endl;
+			++idmaba;
 			cout << "Masukkan Nama			: ";
-			cin >> nama;
-
+			getline(cin,nama);
+			
 			cout << "Masukkan Tanggal Lahir (Angka)	: ";
 			cin >> dd;
 
@@ -62,23 +75,25 @@ int main(int argc, char** argv)
 			
 			cout << "Masukkan NRP			: ";
 			cin >> nrp;
-
+			cin.ignore();
+		
 			cout << "Masukkan Departemen		: ";
-			cin >> departemen;
+			getline(cin,departemen);
 
 			cout << "Masukkan Tahun masuk		: ";
 			cin >> tahunmasuk;
 			cout<< endl;
 
-			mahasiswa maba(idm,nama,dd,mm,yy,nrp,departemen,tahunmasuk);
+			mahasiswa maba(idmaba,nama,dd,mm,yy,nrp,departemen,tahunmasuk,semesterke, skslulus, ipk);
 			recMhs.push_back(maba);
 		}
 		break;
-			case 2:
+			case '2':
 			{
-			++idd;	
+			cout<< "\nIsi data-data berikut : "<< endl;
+			++iddosen;	
 			cout << "Masukkan Nama			: ";
-			cin >> nama;
+			getline(cin, nama);
 
 			cout << "Masukkan Tanggal Lahir (Angka)	: ";
 			cin >> dd;
@@ -91,23 +106,24 @@ int main(int argc, char** argv)
 			
 			cout << "Masukkan NPP			: ";
 			cin >> npp;
-
+			cin.ignore();
 			cout << "Masukkan Departemen		: ";
-			cin >> departemen;
+			getline(cin, departemen);
 
 			cout << "Masukkan Pendidikan Terakhir	: ";
 			cin >> pendidikan;
 			cout<< endl;
 
-				dosen dosenbaru(idd,nama,dd,mm,yy,npp,departemen,pendidikan);
+				dosen dosenbaru(iddosen,nama,dd,mm,yy,npp,departemen,pendidikan);
 				recDosen.push_back(dosenbaru);
 			}
 				break;
-			case 3:
+			case '3':
 			{
-			++idt;
+				cout<< "\nIsi data-data berikut : "<< endl;
+			++idtendik;
 			cout << "Masukkan Nama			: ";
-			cin >> nama;
+			getline(cin,nama);
 
 			cout << "Masukkan Tanggal Lahir (Angka)	: ";
 			cin >> dd;
@@ -120,17 +136,18 @@ int main(int argc, char** argv)
 			
 			cout << "Masukkan NPP			: ";
 			cin >> npp;
+			cin.ignore();
 
 			cout << "Masukkan Unit			: ";
-			cin >> unit;
+			getline(cin,unit);
 			cout<< endl;
 
-				tendik tendikbaru(idt,nama,dd,mm,yy,npp,unit);
+				tendik tendikbaru(idtendik,nama,dd,mm,yy,npp,unit);
 				recTendik.push_back(tendikbaru);
 			}
 				break;
 
-			case 4:	
+			case '4':	
 			{
 				for (int i = 0; i < recMhs.size(); i++)
 				{
@@ -149,7 +166,7 @@ int main(int argc, char** argv)
 			}
 				break;
 
-			case 5:
+			case '5':
 			{	
 				for (int i = 0; i < recMhs.size(); i++)
 				{
@@ -168,7 +185,7 @@ int main(int argc, char** argv)
 			}
 				break;
 
-			case 6:
+			case '6':
 			{
 				for (int i = 0; i < recMhs.size(); i++)
 				{
@@ -184,14 +201,18 @@ int main(int argc, char** argv)
 					cout << endl;
 			}
 			break;
-			case 7: return 0;
+			case '7': return 0;
+			break;
+			
 			default: 
-				cout<< "Input yang dipilihan salah, Silahkan  Masukkan Kembali\n";
+				cout<< "Input yang dipilih salah, Silahkan  Masukkan Kembali\n";
 				break;
 			
 		}
 			
+			cin.clear();
 			cin.ignore();
+			
 	}
 
 	return 0;
