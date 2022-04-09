@@ -14,6 +14,8 @@ public:
 	dosen(int id, std::string nama, int dd, int mm, int yy, std::string npp, std::string departemen, std::string pendidikan);
 
 	void setPendidikan(std::string pendidikan);
+	void setNPP(std::string npp);
+	void setDepartemen(std::string departemen);
 	std::string getPendidikan();
 	std::string getNPP();
 	std::string getDepartemen();

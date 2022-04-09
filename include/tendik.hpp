@@ -16,7 +16,8 @@ public:
 	void setUnit(std::string unit);
 	std::string getUnit();	
 	std::string getNPP();	
-	
+	void setNPP(std::string npp);
+
 };
 
 #endif

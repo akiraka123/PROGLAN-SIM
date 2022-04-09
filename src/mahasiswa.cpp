@@ -10,40 +10,54 @@ mahasiswa::mahasiswa(int id, std::string nama, int dd, int mm, int yy,
 		: person(id, nama, dd, mm, yy), nrp(nrp), departemen(departemen), tahunmasuk(tahunmasuk), 
 					semesterke(semesterke), skslulus(skslulus), ipk(ipk)
 {
-	this->ipk = 0.0;
-	this->semesterke = 1;
-	this->skslulus = 0;
+
 
 	this->ips = std::vector<float>(14,0);
 }
 std::string mahasiswa::getNRP(){
 	return this -> nrp;
 }
+
+void mahasiswa::setNRP(std::string nrp){
+	this ->nrp = nrp;
+}
+
 std::string mahasiswa::getDepartemen(){
 	return this ->departemen;
+}
+
+void mahasiswa::setDepartemen(std::string departemen){
+	this ->departemen = departemen;
 }
 
 int mahasiswa::gettahunmasuk(){
 	return this ->tahunmasuk;
 }
-int mahasiswa::getSemester()
-{
-	return this->semesterke;
+
+void mahasiswa::settahunmasuk(int tahunmasuk){
+	this ->tahunmasuk = tahunmasuk;
 }
 
-int mahasiswa::getSKSLulus()
+int mahasiswa::getSemester()
 {
-	return this->skslulus;
+	return this ->semesterke;
 }
 
 void mahasiswa::setSemester(int semesterke)
 {
-	this->semesterke = semesterke;
+	this ->semesterke = semesterke;
 }
+
+
+int mahasiswa::getSKSLulus()
+{
+	return this ->skslulus;
+}
+
 
 void mahasiswa::setSKSLulus(int skslulus)
 {
-	this->skslulus = skslulus;
+	this ->skslulus = skslulus;
 }
 
 void mahasiswa::hitungIPK()

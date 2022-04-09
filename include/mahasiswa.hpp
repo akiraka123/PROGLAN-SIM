@@ -22,8 +22,14 @@ public:
 					std::string nrp, std::string departemen, int tahunmasuk,
 						int semesterke, int skslulus,float ipk);
 	
+
+	void setNRP(std::string nrp );
 	std::string getNRP();
+	
+	void setDepartemen(std::string departemen );
 	std::string getDepartemen();
+
+	void settahunmasuk(int tahunmasuk);
 	int gettahunmasuk();
 
 	void setSemester(int semesterke);

@@ -17,9 +17,20 @@ std::string dosen::getPendidikan()
 {
 	return this->pendidikan;
 }
+
+void dosen::setNPP(std::string npp){
+	this->npp = npp;
+}
+
 std::string dosen::getNPP(){
 	return this ->npp;
 }
+
+void dosen::setDepartemen(std::string departemen){
+	this -> departemen = departemen;
+}
+
 std::string dosen::getDepartemen(){
 	return this -> departemen;
 }
+
