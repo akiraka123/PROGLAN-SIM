@@ -39,6 +39,8 @@ public:
 	int getSKSLulus();
 
 	void hitungIPK();
+	void setIPK(float ipk);
+	float getIPK();
 
 	void setIPS(int semester, float ips);
 	float getIPS(int semester);

@@ -87,5 +87,13 @@ std::vector<float> mahasiswa::getAllIPS()
 	return this->ips;
 }
 
+void mahasiswa::setIPK(float ipk)
+{
+	this ->ipk = ipk;
+}
 
+float mahasiswa::getIPK()
+{
+	return this ->ipk;
+}
 
