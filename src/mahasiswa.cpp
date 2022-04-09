@@ -26,7 +26,6 @@ std::string mahasiswa::getDepartemen(){
 int mahasiswa::gettahunmasuk(){
 	return this ->tahunmasuk;
 }
-
 int mahasiswa::getSemester()
 {
 	return this->semesterke;

@@ -12,7 +12,7 @@ using namespace std;
 
 
 
-int main(int argc, char** argv)
+int main()
 {
 	system("cls||clear");
 	vector<mahasiswa> recMhs;
@@ -21,12 +21,15 @@ int main(int argc, char** argv)
 
 	
 	char menu_terpilih;
-	int pilihan;
+	
 	string nama,nrp,npp,departemen,pendidikan,unit;
+
 	int dd,mm,yy,tahunmasuk,semesterke, skslulus;
-	float ipk;
+	float ipk=0;
+
 	int idmaba=0, iddosen=0, idtendik=0;
-	int noID=0;
+
+	int noID=0, inputnilai=0;;
 	cout << "\nMake By AKIRAKA \nSelamat datang di Universitas X" << endl << endl;
 	
 	bool kondisi=true;
@@ -45,10 +48,10 @@ int main(int argc, char** argv)
 		cout << "  1. Tambah Mahasiswa" << endl;
 		cout << "  2. Tambah Dosen" << endl;
 		cout << "  3. Tambah Tenaga Kependidikan" << endl;
-		cout << "  4. Tampilkan semua Mahasiswa" << endl;
-		cout << "  5. Tampilkan semua Dosen" << endl;
-		cout << "  6. Tampilkan semua Tenaga Kependidikan" << endl;
-		cout << "  8. Keluar \n" << endl;
+		cout << "  4. Edit atau Tampilkan semua data Mahasiswa" << endl;
+		cout << "  5. Edit atau Tampilkan semua data Dosen" << endl;
+		cout << "  6. Edit atau Tampilkan semua data Tenaga Kependidikan" << endl;
+		cout << "  7. Keluar \n" << endl;
 		cout << "-> Silahkan memilih salah satu: ";
 		cin >> menu_terpilih;
 		cin.ignore();
@@ -82,6 +85,14 @@ int main(int argc, char** argv)
 
 			cout << "Masukkan Tahun masuk		: ";
 			cin >> tahunmasuk;
+			cout<< endl;
+
+			cout << "Masukkan semester sekarang		: ";
+			cin >> semesterke;
+			cout<< endl;
+
+			cout << "Masukkan SKS lulus		: ";
+			cin >> skslulus;
 			cout<< endl;
 
 			mahasiswa maba(idmaba,nama,dd,mm,yy,nrp,departemen,tahunmasuk,semesterke, skslulus, ipk);
@@ -149,26 +160,35 @@ int main(int argc, char** argv)
 
 			case '4':	
 			{
-				for (int i = 0; i < recMhs.size(); i++)
+				for (unsigned i = 0; i < recMhs.size(); i++)
 				{
 					cout<<"\n"<<recMhs[i].getId()<< ". Nama Mahasiswa	: "<<recMhs[i].getNama()<<endl;
 					cout<< "   NRP 			: "<<recMhs[i].getNRP()<<"\n";
 				}
-				cout<< "masukkan nomer ID yang ingin dilihat : ";
+				cout<< "masukkan nomer ID yang ingin dilihat/diedit : ";
 				cin>> noID;
 		
 					cout<<"\n\n"<<recMhs[noID-1].getId()<< ". Nama Mahasiswa	: "<<recMhs[noID-1].getNama()<<endl;
 					cout<< "   NRP 			: "<<recMhs[noID-1].getNRP()<<endl;
 					cout<< "   Tanggal Lahir	: "<<recMhs[noID-1].getTglLahir()<< ", "<< recMhs[noID-1].getBulanLahir()<<", "<<recMhs[noID-1].getTahunLahir()<<endl;
 					cout<< "   Departemen		: "<<recMhs[noID-1].getDepartemen()<<endl;
-					cout<< "   Tahun Masuk		: "<<recMhs[noID-1].getNama()<<endl;
-					cout << endl;
+					cout<< "   Tahun Masuk		: "<<recMhs[noID-1].getNama()<<"\n\n";
+
+					cout << "1. ";
+
+				if (inputnilai=0)
+				{
+					/* code */
+				}
+				
+
+
 			}
 				break;
 
 			case '5':
 			{	
-				for (int i = 0; i < recMhs.size(); i++)
+				for (unsigned i = 0; i < recMhs.size(); i++)
 				{
 					cout<<"\n"<<recDosen[i].getId()<< ". Nama Dosen		: "<<recDosen[i].getNama()<<endl;
 					cout<< "  NPP 			: "<<recDosen[i].getNPP()<<endl;
@@ -187,7 +207,7 @@ int main(int argc, char** argv)
 
 			case '6':
 			{
-				for (int i = 0; i < recMhs.size(); i++)
+				for (unsigned i = 0; i < recMhs.size(); i++)
 				{
 					cout<<"\n"<<recTendik[i].getId()<< ". Nama Tendik	: "<<recTendik[i].getNama()<<endl;
 					cout<< "  NPP 		: "<<recTendik[i].getNPP()<<endl;

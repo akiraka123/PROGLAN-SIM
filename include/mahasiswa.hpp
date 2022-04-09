@@ -14,12 +14,14 @@ private:
 	int skslulus;
 	float ipk;
 	std::vector<float> ips;
-
+		
+		//ubah id typedata dari sting ke integer
+ 			// penembahan paramater semesterke, skslulus dan ipk. 
 public:
 	mahasiswa(int id, std::string nama, int dd, int mm, int yy,
 					std::string nrp, std::string departemen, int tahunmasuk,
 						int semesterke, int skslulus,float ipk);
-
+	
 	std::string getNRP();
 	std::string getDepartemen();
 	int gettahunmasuk();
