@@ -393,6 +393,7 @@ int main()
 				ipk/=recMhs[noID-1].getSemester();
 				recMhs[noID-1].setIPK(ipk);
 				cout<<"NILAI IPK : "<<ipk;
+				cout<< "\n untuk melihat data keseluruhan dapat kembali\nke menu utama tekan semua";
 			}
 			break;
 
