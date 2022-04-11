@@ -53,27 +53,21 @@ int main()
 		cout<< "Masukkan username dan password untuk masuk ke menu utama\n\nUsername: ";
 		cin >> username;
 		cin.ignore();
-		if (username==user)
-		{
-			cout << "Password: ";
-			cin >> password ;
-			cin.ignore();
-			if (password==pass)
-			{
-				kondisi++;
-			}
-			
-		}else{ 
-			system("cls||clear");
+		cout << "Password: ";
+		cin >> password ;
+		cout<< "==========================================================";
+		cin.ignore();
+		if (username==user&&password==pass) kondisi++;
+		else{ 
 			cout<< "\nUsername atau password salah, silahkan masukkan kembali ";
 			cin.ignore();
 			system("cls||clear");
-
 			return main();
 		}
 		
 	}
 
+	system("cls||clear");
 	//Main menu
 
 	while (kondisi==1) {	
@@ -304,7 +298,7 @@ int main()
 					cout<< "Departemen			: "<<recDosen[noID-1].getDepartemen()<<endl;
 					cout<< "Pendidikan Terakhir		: "<<recDosen[noID-1].getPendidikan();
 
-					cout << "========================================================\n";	
+					cout << "\n========================================================\n";	
 					cout << "1. Edit data \n";
 					cout << "0. Keluar ";
 					cout << "\n========================================================\n";	
@@ -347,7 +341,7 @@ int main()
 			{
 				for (unsigned i = 0; i < recTendik.size(); i++)				//menampilkan seluruh data tekdik yang didapat
 				{
-					cout<< "\n========================================================\n";	
+					cout<< "========================================================\n";	
 					cout<< recTendik[i].getId()<< ". Nama Tendik	: "<<recTendik[i].getNama()<<endl;
 					cout<< "   NPP 		: "<<recTendik[i].getNPP()<<endl;
 				}
