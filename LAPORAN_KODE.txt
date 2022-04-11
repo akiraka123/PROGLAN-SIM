@@ -1,0 +1,44 @@
+DI main.cpp saya menggunakan getnama, getDepartemen,dll dengan nama depan get yang serupa
+
+contoh getDepartemen: 
+
+std::string mahasiswa::getDepartemen(){
+	return this ->departemen;
+}
+
+hal ini saya gunakan untuk mendapatkan inputan yang telah saya masukkan kedalam vector di main menu bagian 1,2 dan 3.
+cara penulisan untuk memakai get karena fungsi itu tersimpan di mahasiswa.hpp maka untuk memakainya sebagai berikut:
+
+recMhs[index].getDepartemen();
+
+dimana recMhs (vector) sudah dideklarasikan sebelumnya lewat main menu 1,2,dan 3. 
+cara memasukkan data nya ke dalam vector recMhs sebagai berikut;
+
+mahasiswa maba(idmaba, nama,dd,mm,yy,nrp,departemen,tahunmasuk,semesterke, skslulus, ipk);
+^           ^                                   ^
+class       variabel                         isinya
+======================================================================================================================
+
+
+yang kedua saya di main.cpp juga menggunakan setnama,setDepartemen, dan lain lain dengan nama depan set yang serupa
+
+contoh fungsi setDepartemen: 
+
+void mahasiswa::setDepartemen(std::string departemen){
+	this ->departemen = departemen;
+}
+
+
+saya menggunakan fungsi void karena tidak ingin mengambalikan suatu nilai akan tetapi
+fungsi setDepartemen ini saya gunakan untuk mengganti data yang telah tersimpan sebelumnya menjadi data baru
+
+catatan: data yang telah saya isi sebelumnya (main menu 1,2,3)
+
+cara penggunaanya di main.cpp hampir sama dengan yang get bedanya adalah sebagai berikut
+
+recMhs[index].getDepartemen(Input);
+
+dimana input tersebut dimasukkan sesuai dengan variabel pada program sebagai input.
+
+
+TERIMAKASIH
