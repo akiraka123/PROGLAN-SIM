@@ -1,7 +1,6 @@
 # PROGLAN-SIM
 ====================================
-MAKE BY MOCHAMAD AKIRAKA HARIFANDA         
-NRP: 5024211051                            
+MAKE BY MOCHAMAD AKIRAKA HARIFANDA                                    
 ====================================
 
 TUGAS MEMBUAT SIAKAD.
