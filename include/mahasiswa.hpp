@@ -38,7 +38,6 @@ public:
 	void setSKSLulus(int skslulus);
 	int getSKSLulus();
 
-	void hitungIPK();
 	void setIPK(float ipk);
 	float getIPK();
 

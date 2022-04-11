@@ -60,17 +60,11 @@ void mahasiswa::setSKSLulus(int skslulus)
 	this ->skslulus = skslulus;
 }
 
-void mahasiswa::hitungIPK()
-{
-
-}
-
 void mahasiswa::setIPS(int semester, float ips)
 {
 	// semester mulai dari 1
 	if (semester < 15) {
 		this->ips[semester-1] = ips;
-		this->hitungIPK();
 	}
 }
 
