@@ -8,6 +8,7 @@
 #include "include/mahasiswa.hpp"
 #include "include/dosen.hpp"
 #include "include/tendik.hpp"
+#include "include/matkul.hpp"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ int main()
 	vector<mahasiswa> recMhs;
 	vector<dosen> recDosen;
 	vector<tendik> recTendik;
-
+	vector<matkul> recmatkul;
 	
 	char menu_terpilih;
 	
@@ -30,7 +31,7 @@ int main()
 
 	int idmaba=0, iddosen=0, idtendik=0;
 
-	int noID=0, inputnilai=0;;\
+	int noID=0, number=0;;\
 	
 	system("cls||clear");
 
@@ -62,7 +63,7 @@ int main()
 			cout<< "\nUsername atau password salah, silahkan masukkan kembali ";
 			cin.ignore();
 			system("cls||clear");
-			return main();
+			continue;
 		}
 		
 	}
@@ -91,7 +92,7 @@ int main()
 		cout << "  4. Edit atau Tampilkan semua data Mahasiswa" << endl;		//edit data mahasiswa dan menampilkan seluruh data yang didapat
 		cout << "  5. Edit atau Tampilkan semua data Dosen" << endl;				//edit data dosen dan menampilkan seluruh data yang didapat
 		cout << "  6. Edit atau Tampilkan semua data Tenaga Kependidikan" << endl;		//edit data tendik dan menampilkan seluruh data yang didapat
-		cout << "  7. Input Nilai Mahasiswa" << endl;								//input nilai IPS mahasiswa dan total IPKnya
+		cout << "  7. Input Nilai atau Mata Kuliah Mahasiswa" << endl;								//input nilai IPS mahasiswa dan total IPKnya
 		cout << "  8. logout "<<endl;											//mengulang dari awal int main ()
 		cout << "  0. Keluar program";												//mengakhiri program
 		cout<< "\n========================================================\n";
@@ -141,6 +142,8 @@ int main()
 
 			cout << "ipk				: 0.0 ";
 			ipk=0.0;
+
+			cout<< "\nMata Kuliah			: -";
 			mahasiswa maba(idmaba, nama,dd,mm,yy,nrp,departemen,tahunmasuk,semesterke, skslulus, ipk);
 			recMhs.push_back(maba);
 		}
@@ -233,16 +236,16 @@ int main()
 				cout<< "Semester ke		: "<<recMhs[noID-1].getSemester()<<endl;
 				cout<< "SKS Lulus		: "<<recMhs[noID-1].getSKSLulus()<<endl;
 				cout<< "Nilai IPK		: "<<recMhs[noID-1].getIPK();
-				
+				cout<< "\nMata Kuliah		: "<< recmatkul[noID-1].getMK();
 
 					cout<< "\n========================================================\n";	
 					cout << "1. Edit data \n";
 					cout << "0. Keluar ";
 					cout<< "\n========================================================\n";	
 					cout<<"TEKAN : ";
-					cin>>inputnilai;
+					cin>>number;
 				system("cls||clear");
-				switch (inputnilai)				//edit data mahasiswa
+				switch (number)				//edit data mahasiswa
 				{
 				case 0: ;
 					break;
@@ -303,9 +306,9 @@ int main()
 					cout << "0. Keluar ";
 					cout << "\n========================================================\n";	
 					cout <<"TEKAN : ";
-					cin>>inputnilai;
+					cin>>number;
 						system("cls||clear");
-				switch (inputnilai)				//edit data dosen
+				switch (number)				//edit data dosen
 				{
 				case 0: 
 					break;
@@ -359,9 +362,9 @@ int main()
 					cout << "0. Keluar ";
 					cout<< "\n========================================================\n";	
 					cout<<"TEKAN : ";
-					cin>>inputnilai;	
+					cin>>number;	
 					system("cls||clear");
-					switch (inputnilai)				//edit data tendik
+					switch (number)				//edit data tendik
 				{
 				case 0: 
 					break;
@@ -393,20 +396,35 @@ int main()
 			}
 			break;
 
-			case '7':						//menginput nilai mahasiswa
+			case '7':					
 			{	
-				float nilaiips;
-				ipk=0;
-				for (unsigned i = 0; i < recMhs.size(); i++)				
+				for (int i = 0; i < recMhs.size(); i++)				
 				{
 					cout<< "\n========================================================\n";	
 					cout<<recMhs[i].getId()<< ". Nama Mahasiswa	: "<<recMhs[i].getNama()<<endl;
 					cout<< "   NRP 			: "<<recMhs[i].getNRP();
 				}
 				cout<< "\n========================================================\n";	
-				cout<< "masukkan nomer ID untuk input IPS ";
+				cout<< "masukkan nomer ID untuk mengedit";
 				cin>> noID;
 				system("cls||clear");
+
+				cout<< "\n========================================================\n";	
+				cout << "1. Edit Nilai Mahasiswa \n";
+				cout << "2. Edit Matkul Mahasiswa \n";
+				cout << "0. Keluar ";
+				cout<< "\n========================================================\n";	
+				cout<<"TEKAN : ";
+				cin>>number;
+
+				switch (number)
+			{
+			case 0:
+				break;
+			case 1:{
+				float nilaiips;
+				ipk=0;
+				
 
 				cout<< "\n========================================================\n";	
 					cout<<recMhs[noID-1].getId()<< ". Nama Mahasiswa	: "<<recMhs[noID-1].getNama()<<endl;
@@ -424,8 +442,23 @@ int main()
 				cout<<"NILAI IPK : "<<ipk;
 				cout<< "\n\nUntuk melihat data keseluruhan dapat kembali\nke menu utama tekan menu tampilkan semua";
 				cin.ignore();
-				
+			break;
 			}
+			case 2:{
+				string MataKuliah;
+				cout<< "========================================================\n";
+				cout<< "Masukkan Matkul yang sedang dijalankan : \n";
+				cin.ignore();
+				getline(cin, MataKuliah);
+
+				matkul mahas(noID, MataKuliah);
+
+				recmatkul.push_back(mahas);
+				break;
+			}	
+
+			}
+		}
 			break;
 
 			case '8': kondisi = 0; return main();

@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "include/person.hpp"
+#include "include/matkul.hpp"
 
 class mahasiswa : public person {
 private:
@@ -21,7 +22,6 @@ public:
 	mahasiswa(int id, std::string nama, int dd, int mm, int yy,
 					std::string nrp, std::string departemen, int tahunmasuk,
 						int semesterke, int skslulus,float ipk);
-	
 
 	void setNRP(std::string nrp );
 	std::string getNRP();
