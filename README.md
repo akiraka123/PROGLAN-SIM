@@ -1,6 +1,6 @@
 # PROGLAN-SIM
 ====================================
-MAKE BY MOCHAMAD AKIRAKA HARIFANDA                                    
+MAKE BY Akiraka                                   
 ====================================
 
-TUGAS MEMBUAT SIAKAD.
+SIAKAD
